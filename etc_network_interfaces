@@ -1,0 +1,16 @@
+auto eth1
+allow-hotplug eth1
+iface eth1 inet dhcp
+
+auto lo eth0
+iface eth0 inet static
+  address 192.168.1.11
+  netmask 255.255.255.0
+
+auto eth2
+iface eth2 inet static
+  address 192.168.3.11
+  netmask 255.255.255.0
+
+# Static route so we know where to find the velodyne
+up route add 192.168.17.145 eth2
