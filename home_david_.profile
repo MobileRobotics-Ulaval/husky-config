@@ -25,3 +25,5 @@ source /opt/ros/indigo/setup.bash
 source $HOME/catkin_ws/devel/setup.bash
 
 ROS_IP=192.168.1.11
+
+LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
