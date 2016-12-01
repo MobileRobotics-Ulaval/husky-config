@@ -104,7 +104,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
     <link name="imu_link"/>
     <joint name="imu_joint" type="fixed">
-      <origin xyz="$(optenv HUSKY_IMU_XYZ -0.24 0.20 0.18)" rpy="$(optenv HUSKY_IMU_RPY 0 0 3.1416)" />
+      <origin xyz="$(optenv HUSKY_IMU_XYZ -0.24 0.20 0.18)" rpy="$(optenv HUSKY_IMU_RPY 3.14159 0 3.14159)" />
       <parent link="base_link" />
       <child link="imu_link" />
     </joint>
