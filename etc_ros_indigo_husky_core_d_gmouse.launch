@@ -1,0 +1,5 @@
+<launch>
+  <node name="gmouse" pkg="gpsd_client" type="gpsd_client">
+    <param name="host" value="localhost" />
+  </node>
+</launch>
