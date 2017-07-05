@@ -1,0 +1,1 @@
+SUBSYSTEMS=="usb", ATTRS{manufacturer}=="Prolific*", ATTRS{devpath}=="3" PROGRAM="/bin/echo '%s{product}'", SYMLINK+="husky prolific prolific_$attr{devpath} ", MODE="0666"
