@@ -172,7 +172,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       <joint name="velo_support_base" type="fixed">
         <parent link="user_rail_link" />
         <child link="velo_support_base_link" />
-        <origin xyz="0.023 0 0.15" rpy="0.0 0.0 -1.57" />
+        <origin xyz="0.023 0 0.15" rpy="0.0 0.0 0.0" />
       </joint>
       <!-- Actual Velodyne -->
       <xacro:HDL-32E parent="velo_support_base_link" name="velodyne" topic="/velodyne_points">
