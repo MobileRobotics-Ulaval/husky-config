@@ -7,10 +7,15 @@ iface eth0 inet static
   address 192.168.1.11
   netmask 255.255.255.0
 
+# ======= Velodyne =======
 auto eth2
 iface eth2 inet static
   address 192.168.3.11
   netmask 255.255.255.0
-
-# Static route so we know where to find the velodyne
 up route add 192.168.17.145 eth2
+
+# ======= Sick =======
+#auto eth2
+#iface eth2 inet static
+#  address 169.254.20.93
+#  netmask 255.255.0.0
