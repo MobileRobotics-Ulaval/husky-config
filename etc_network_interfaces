@@ -7,14 +7,18 @@ iface eth0 inet static
   address 192.168.1.11
   netmask 255.255.255.0
 
-# ======= Velodyne =======
+# Use for a demo 26 avril 2019
+#auto lo eth0
+#iface eth0 inet dhcp
+
+# ======= VLP16 =======
 auto eth2
 iface eth2 inet static
   address 192.168.3.11
   netmask 255.255.255.0
-up route add 192.168.17.145 eth2
+up route add 192.168.1.201 eth2
 
-# ======= Sick =======
+# ======= LMS-151 =======
 #auto eth2
 #iface eth2 inet static
 #  address 169.254.20.93

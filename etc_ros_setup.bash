@@ -9,7 +9,8 @@ export ROBOT_SETUP=/etc/ros/setup.bash
 ######
 
 # Pass through to the main ROS workspace of the system.
-source /opt/ros/indigo/setup.bash
+source /home/husky/catkin_ws/devel/setup.bash
 
 export ROS_IP=192.168.1.11
 export HUSKY_VELODYNE_ENABLED=true
+export HUSKY_TIM561_ENABLED=false

@@ -29,12 +29,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <arg name="ur5_enabled" default="$(optenv HUSKY_UR5_ENABLED false)"/>
   <arg name="kinect_enabled" default="false"/>
   <arg name="velodyne_enabled" default="$(optenv HUSKY_VELODYNE_ENABLED false)"/>
+  <arg name="tim561_enabled" default="$(optenv HUSKY_TIM561_ENABLED false)"/>
 
   <param name="robot_description" command="$(find xacro)/xacro.py '$(env HUSKY_DESCRIPTION)'
     laser_enabled:=$(arg laser_enabled)
     ur5_enabled:=$(arg ur5_enabled)
     kinect_enabled:=$(arg kinect_enabled)
-    velodyne_enabled:=$(arg velodyne_enabled)" />
+    velodyne_enabled:=$(arg velodyne_enabled)
+    tim561_enabled:=$(arg tim561_enabled)"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 

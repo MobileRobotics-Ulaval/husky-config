@@ -35,6 +35,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <xacro:include filename="$(find husky_description)/urdf/accessories/velodyne_mount.urdf.xacro"/>
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro" />
+  <xacro:include filename="$(find sick_tim)/urdf/sick_tim.urdf.xacro"/>
 
   <property name="M_PI" value="3.14159"/>
 
@@ -166,6 +167,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
     </xacro:if>
 
+
     <xacro:if value="$(arg velodyne_enabled)">
       <!-- Support, 1.5cm is add to take into account the true high of the user_rail -->
       <link name="velo_support_base_link"/>
@@ -176,8 +178,21 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       </joint>
       <!-- Actual Velodyne -->
       <xacro:HDL-32E parent="velo_support_base_link" name="velodyne" topic="/velodyne_points">
-          <origin xyz="0 0 0" rpy="0 0 0" />
+          <origin xyz="0 0 0" rpy="0 0 -1.5708" />
       </xacro:HDL-32E>
+
+    </xacro:if>
+
+
+    <xacro:if value="$(arg tim561_enabled)">
+
+      <xacro:sick_tim551 name="tim561" ros_topic="/scan" />
+      
+      <joint name="tim561_support_base" type="fixed">
+        <parent link="user_rail_link" />
+        <child link="tim561_mount_link" />
+        <origin xyz="0.023 0 0.15" rpy="0.0 0.0 0.0" />
+      </joint>
 
     </xacro:if>
 
